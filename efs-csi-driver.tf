@@ -5,7 +5,7 @@ resource "aws_iam_policy" "efs_csi_policy" {
 
 module "efs_csi_role" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version                       = "5.44.2"
+  version                       = "5.45.0"
   create_role                   = true
   role_description              = "EFS CSI Driver Role"
   role_name_prefix              = "efs-csi-driver-policy"
