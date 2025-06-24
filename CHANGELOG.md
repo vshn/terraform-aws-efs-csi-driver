@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.8.0
+- Fix IAM policy
+
 ## v1.7.0
 - Update terraform-aws-modules/iam/aws to v5.58.0
 
