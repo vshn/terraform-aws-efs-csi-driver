@@ -24,27 +24,26 @@ resource "helm_release" "efs_csi" {
   timeout         = 300
   version         = var.helm_chart_version
 
-  set {
-    name  = "image.repository"
-    value = var.efs_csi_helm_image_repository
-    type  = "string"
-  }
-
-  set {
-    name  = "controller.serviceAccount.create"
-    value = "true"
-    type  = "string"
-  }
-
-  set {
-    name  = "controller.serviceAccount.name"
-    value = var.efs_csi_sa_name
-    type  = "string"
-  }
-
-  set {
-    name  = "controller.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-    value = module.efs_csi_role.iam_role_arn
-    type  = "string"
-  }
+  set = [
+    {
+      name  = "image.repository"
+      value = var.efs_csi_helm_image_repository
+      type  = "string"
+    },
+    {
+      name  = "controller.serviceAccount.create"
+      value = "true"
+      type  = "string"
+    },
+    {
+      name  = "controller.serviceAccount.name"
+      value = var.efs_csi_sa_name
+      type  = "string"
+    },
+    {
+      name  = "controller.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+      value = module.efs_csi_role.iam_role_arn
+      type  = "string"
+    }
+  ]
 }
