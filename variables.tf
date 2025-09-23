@@ -15,12 +15,12 @@ variable "helm_chart_version" {
   type        = string
 }
 
-variable "oidc_provider_url" {
-  description = "The URL of the openid connect provider."
+variable "efs_csi_helm_image_repository" {
+  description = "The image repository of the region. I.e. 602401143452.dkr.ecr.eu-west-1.amazonaws.com/eks/aws-efs-csi-driver. See also https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
   type        = string
 }
 
-variable "efs_csi_helm_image_repository" {
-  description = "The image repository of the region. I.e. 602401143452.dkr.ecr.eu-west-1.amazonaws.com/eks/aws-efs-csi-driver. See also https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+variable "oidc_provider_arn" {
+  description = "The arn of the openid connect provider."
   type        = string
 }
