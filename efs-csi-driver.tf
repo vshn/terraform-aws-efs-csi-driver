@@ -5,7 +5,7 @@ resource "aws_iam_policy" "efs_csi_policy" {
 
 module "efs_csi_role" {
   source          = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts"
-  version         = "6.11.1"
+  version         = "6.11.2"
   description     = "EFS CSI Driver Role"
   name            = "efs-csi-driver-policy"
   use_name_prefix = true
